@@ -20,7 +20,7 @@ public class Readinvoices {
 		Statement stmt=con.createStatement();
 		
 		//create a new table in the database 'places'
-		String sql="create table info (Student_ID int, Student_Name varchar(40),Father_name varchar(40),Mother_name varchar(30),Adderss varchar(25),Country varchar(20),State varchar(40),Pincode int,Mobile_no int),Blood_grp varchar(40))";
+		String sql="create table info7 (Student_ID int, Student_Name varchar(40),Father_name varchar(40),Mother_name varchar(30),Adderss varchar(25),Country varchar(20),State varchar(40),Pincode int,Mobile_no int,Blood_grp varchar(40))";
 		stmt.execute(sql);
 		
 		//Excel
@@ -44,7 +44,7 @@ public class Readinvoices {
 			int mobile=(int)row.getCell(8).getNumericCellValue();
 			String bloodgrp=row.getCell(9).getStringCellValue();
 			
-			sql="insert into info values('"+student_ID+"', '"+student_name+"', '"+fathername+"', '"+mothername+"', '"+address+"', '"+country+"', '"+state+"', '"+pincode+"', '"+mobile+"', '"+bloodgrp+"')";
+			sql="insert into info7 values('"+student_ID+"', '"+student_name+"', '"+fathername+"', '"+mothername+"', '"+address+"', '"+country+"', '"+state+"', '"+pincode+"', '"+mobile+"','"+bloodgrp+"')";
 			stmt.execute(sql);
 			stmt.execute("commit");
 		}
